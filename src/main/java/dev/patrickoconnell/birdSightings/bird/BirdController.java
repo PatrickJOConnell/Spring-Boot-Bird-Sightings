@@ -31,14 +31,10 @@ public class BirdController {
         List<List> birdCountList = birdService.getCounts();
         for (int i = 0; i < birdCountList.size(); i++) {
             List birdList = birdCountList.get(i);
-            System.out.println("here" + birdList);
             String bn = birdList.get(0).toString();
             String count = Long.toString((Long) birdList.get(1));
-            System.out.println("here2" + bn);
-            System.out.println("here2" + count);
             BirdCount bc = new BirdCount(birdList.get(0).toString(), (long) birdList.get(1));
             birdCountReturn.add(bc);
-            System.out.println(bc.toString());
         }
         return birdCountReturn;
 
